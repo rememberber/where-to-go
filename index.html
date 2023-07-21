@@ -21,18 +21,18 @@
         }
         button {
           display: block;
-          margin: 0 auto;
+          margin: 40px auto;
           padding: 10px;
           background-color: #ff6d6d;
           color: #fff;
           border: none;
           border-radius: 5px;
-          font-size: 16px;
+          font-size: 32px;
           cursor: pointer;
         }
         p {
           text-align: center;
-          font-size: 24px;
+          font-size: 26px;
           margin-top: 20px;
           color: #333;
         }
@@ -53,7 +53,7 @@
     <p id="result"></p>
 </main>
 <footer>
-    <p>上次选择的楼层：<b><span id="lastFloor">{{lastFloor}}</span>楼</b></p>
+    <p id="lastFloorP">上次选择的楼层：<b><span id="lastFloor">{{lastFloor}}</span>楼</b></p>
     <!-- <p>上上次选择的楼层：<span id="lastLastFloor">{{lastLastFloor}}</span></p> -->
 </footer>
 <script>
@@ -91,6 +91,8 @@
     //     selectedBuilding = buildingOptions[Math.floor(Math.random() * 2)];
     //   } else if (isDinnerTime) {
         selectedBuilding = buildingOptions[Math.floor(Math.random() * buildingOptions.length)];
+
+        document.getElementById("lastFloorP").style.display="none";
     //   }
 
       if (selectedBuilding) {
