@@ -32,7 +32,7 @@
         }
         p {
           text-align: center;
-          font-size: 32px;
+          font-size: 64px;
           margin-top: 20px;
           color: #333;
         }
@@ -102,8 +102,7 @@
           floor = floorOptions[Math.floor(Math.random() * floorOptions.length)];
         }
         // 大号字体
-<!--        result.innerHTML = `今天去<b>${selectedBuilding.name}${floor}楼</b>吃${isLunchTime ? '午' : '晚'}餐吧！`;-->
-        result.innerHTML = `今天去<b font-size="64px">${selectedBuilding.name}${floor}楼</b>吃${isLunchTime ? '午' : '晚'}餐吧！`;
+        result.innerHTML = `今天去<b>${selectedBuilding.name}${floor}楼</b>吃${isLunchTime ? '午' : '晚'}餐吧！`;
         lastLastFloor = lastFloor;
         lastFloor = `${selectedBuilding.name}${floor}`;
         // lastLastFloorEl.textContent = lastLastFloor;
