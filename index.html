@@ -32,7 +32,7 @@
         }
         p {
           text-align: center;
-          font-size: 64px;
+          font-size: 120px;
           margin-top: 20px;
           color: #333;
         }
@@ -51,6 +51,8 @@
 <main>
     <button id="randomBtn">推荐一个去处</button>
     <p id="result"></p>
+    <p id="cl1"></p>
+    <p id="cl2"></p>
 </main>
 <footer>
     <p id="lastFloorP">上次选择的楼层：<b><span id="lastFloor">{{lastFloor}}</span>楼</b></p>
@@ -71,6 +73,8 @@
 
     const randomBtn = document.getElementById('randomBtn');
     const result = document.getElementById('result');
+    const cl1 = document.getElementById('cl1');
+    const cl2 = document.getElementById('cl2');
     const lastFloorEl = document.getElementById('lastFloor');
     const lastLastFloorEl = document.getElementById('lastLastFloor');
     let lastFloor = localStorage.getItem('lastFloor');
@@ -102,7 +106,8 @@
           floor = floorOptions[Math.floor(Math.random() * floorOptions.length)];
         }
         // 大号字体
-        result.innerHTML = `今天去<b>${selectedBuilding.name}${floor}楼</b>吃${isLunchTime ? '午' : '晚'}餐吧！`;
+        cl1.innerHTML = `<b>${selectedBuilding.name}</b>`;
+        cl2.innerHTML = `<b>${floor}楼</b>`;
         lastLastFloor = lastFloor;
         lastFloor = `${selectedBuilding.name}${floor}`;
         // lastLastFloorEl.textContent = lastLastFloor;
